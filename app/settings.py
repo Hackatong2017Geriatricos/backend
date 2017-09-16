@@ -166,7 +166,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CORS_ORIGIN_WHITELIST = (
     'https://hackatong2017-geriatricos.herokuapp.com',
-    'localhost:8000',
-    '127.0.0.1:9000',
+    'localhost:8080',
+    '127.0.0.1:8080',
     'file://',
 )
