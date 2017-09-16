@@ -28,6 +28,7 @@ SECRET_KEY = '1x#g8f_npkqfvo0%u0@l)+(4qru33c__+!zcqzz5w%#w5q9ml_'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'hackatong2017-geriatricos.herokuapp.com',
 ]
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
     'rest_framework',
 ]
 
@@ -138,6 +140,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+DEFAULT_INDEX_TABLESPACE = 'default'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
