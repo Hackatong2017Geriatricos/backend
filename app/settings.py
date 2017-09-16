@@ -27,7 +27,9 @@ SECRET_KEY = '1x#g8f_npkqfvo0%u0@l)+(4qru33c__+!zcqzz5w%#w5q9ml_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'hackatong2017-geriatricos.herokuapp.com',
+]
 
 
 # Application definition
