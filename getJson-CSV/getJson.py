@@ -38,6 +38,18 @@ def traer_datos_formateados():
 
 	return lista_geriatricos	
 
+def traer_geriatricos_muni():
+	url = "https://gobiernoabierto.cordoba.gob.ar/api/v2/entes-privados/geriatricos/"
+	res = []  # resultados a devolver
+    while url:
+        r = requests.get(url=url)
+        print('Getting {} ({})'.format(url, len(res)))
+        respuesta = r.json()
+        resultados = respuesta["results"]
+        for resultado in resultados:
+            res.append(resultado) 
+        # en la última página viene vacío
+        url = respuesta["next"]
 
-
+      return res
 
