@@ -11,3 +11,5 @@ dependencies:
 - pip:
   - sqlalchemy-dao==1.2.5
   - requests==2.18.4
+  - django==1.11.5
+  - djangorestframework==3.6.4
