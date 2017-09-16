@@ -2,6 +2,14 @@ from django.db import models
 
 # Create your models here.
 
+class OrigenDatos(models.Model):
+    nombre = models.CharField(max_length=150)
+    url = models.URLField()
+
+class LocalOrigenDatos(models.Model):
+    id_referencia = models.IntegerField()
+    origen = models.ForeignKey(OrigenDatos)
+
 class Local(models.Model):
     origen_referencia = models.ForeignKey(LocalOrigenDatos)
     nombre = models.CharField(max_length=150)
@@ -24,12 +32,3 @@ class Local(models.Model):
 class Imagen(models.Model):
     url = models.URLField()
     local = models.ForeignKey(Local)
-
-class LocalOrigenDatos(models.Model):
-    id_referencia = models.IntegerField()
-    origen = models.ForeignKey(OrigenDatos)
-
-
-class OrigenDatos(models.Model):
-    nombre = models.CharField(max_length=150)
-    url = models.URLField()
