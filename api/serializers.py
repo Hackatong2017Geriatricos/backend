@@ -34,8 +34,7 @@ class LocalSerializer(serializers.HyperlinkedModelSerializer):
             'ente_habilitador',
             'plazas_habilitadas',
             'fecha_actualizacion',
-            'fecha_creacion',
-            'origen_referencia'
+            'fecha_creacion'
         )
 
 """
