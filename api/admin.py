@@ -13,4 +13,4 @@ class LocalAdmin(admin.ModelAdmin):
 
 @admin.register(OrigenDatos)
 class OrigenDatosAdmin(admin.ModelAdmin):
-    fields = ('nombre', 'url')
+    fields = ('id_referencia', 'nombre', 'url')

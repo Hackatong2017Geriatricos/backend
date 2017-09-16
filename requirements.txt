@@ -11,6 +11,7 @@ cssselect==1.0.1
 decorated==1.8.2
 dj-database-url==0.4.2
 Django==1.11.5
+django-cors-headers==2.1.0
 djangorestframework==3.6.4
 extras==1.0.0
 fixtures==3.0.0
