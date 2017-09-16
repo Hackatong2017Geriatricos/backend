@@ -20,7 +20,7 @@ class Command(BaseCommand):
         parser.add_argument('--ppp', nargs='?', type=str, help='ayuda param')
     '''
 
-    # solo va a grabar si el proceso se ejecuto completamente sin errores 
+    # solo va a grabar si el proceso se ejecuto completamente sin errores
     @transaction.atomic
     def handle(self, *args, **options):
         url = "https://gobiernoabierto.cordoba.gob.ar/api/v2/entes-privados/geriatricos/"
@@ -43,11 +43,11 @@ class Command(BaseCommand):
             # en la última página viene vacío
             url = respuesta["next"]
 
-          return res
+        return res
 
-            # orama, created = RamaActividad.objects.get_or_create(nombre=rama_actividad)
-            # ocategoria, created = CategoriaActividad.objects.get_or_create(rama=orama, nombre=categoria)
-            # oactividad = ActividadOTA.objects.create(categoria=ocategoria, codigo=codigo, nombre=descripcion, alicuota=alicuota, minimo=minimo)
+        # orama, created = RamaActividad.objects.get_or_create(nombre=rama_actividad)
+        # ocategoria, created = CategoriaActividad.objects.get_or_create(rama=orama, nombre=categoria)
+        # oactividad = ActividadOTA.objects.create(categoria=ocategoria, codigo=codigo, nombre=descripcion, alicuota=alicuota, minimo=minimo)
 
 
-            self.stdout.write(self.style.SUCCESS('Archivo cargado con éxito, se cargaron {} registros nuevos ({} repetidos)'.format(nuevos, repetidos)))
+        self.stdout.write(self.style.SUCCESS('Archivo cargado con éxito, se cargaron {} registros nuevos ({} repetidos)'.format(nuevos, repetidos)))

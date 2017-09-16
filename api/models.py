@@ -1,5 +1,5 @@
 from django.db import models
-
+import django
 # Create your models here.
 
 class OrigenDatos(models.Model):
@@ -13,20 +13,20 @@ class LocalOrigenDatos(models.Model):
 class Local(models.Model):
     origen_referencia = models.ForeignKey(LocalOrigenDatos)
     nombre = models.CharField(max_length=150)
-    descripcion = models.TextField()
-    url = models.URLField()
+    descripcion = models.TextField(blank=True)
+    url = models.URLField(blank=True)
     titular = models.CharField(max_length=150)
     cuit = models.CharField(max_length=15)
-    telefono = models.CharField(max_length=50)
+    telefono = models.CharField(max_length=50, blank=True)
     direccion = models.CharField(max_length=150)
-    email = models.EmailField()
+    email = models.EmailField(blank=True)
     longitud = models.FloatField()
     latitud = models.FloatField()
-    fecha_inscripcion = models.DateField()
+    fecha_inscripcion = models.DateField(blank=True)
     estado_habilitacion = models.CharField(max_length=50)
     ente_habilitador = models.CharField(max_length=150)
     plazas_habilitadas = models.IntegerField()
-    fecha_actualizacion = models.DateTimeField()
+    fecha_actualizacion = models.DateTimeField(default=django.utils.timezone.now)
     fecha_creacion = models.DateTimeField()
 
 class Imagen(models.Model):
