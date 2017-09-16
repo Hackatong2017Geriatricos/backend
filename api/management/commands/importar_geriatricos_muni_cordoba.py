@@ -20,6 +20,7 @@ class Command(BaseCommand):
         parser.add_argument('--ppp', nargs='?', type=str, help='ayuda param')
     '''
 
+    # solo va a grabar si el proceso se ejecuto completamente sin errores 
     @transaction.atomic
     def handle(self, *args, **options):
         url = "https://gobiernoabierto.cordoba.gob.ar/api/v2/entes-privados/geriatricos/"
