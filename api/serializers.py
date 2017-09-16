@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from app.api.models import Local
+from api.models import Local
 from rest_framework import serializers
 
 

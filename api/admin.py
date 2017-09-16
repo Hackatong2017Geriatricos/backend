@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.api.models import Local, LocalOrigenDatos, OrigenDatos
+from api.models import Local, LocalOrigenDatos, OrigenDatos
 
 # Register your models here.
 
