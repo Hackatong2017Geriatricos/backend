@@ -1,8 +1,11 @@
 from django.contrib import admin
-from api.models import Local, LocalOrigenDatos, OrigenDatos
+from api.models import Local, LocalOrigenDatos, OrigenDatos, Imagen
 
 # Register your models here.
 
+@admin.register(Imagen)
+class ImagenAdmin(admin.ModelAdmin):
+    field = ('local', 'url')
 
 @admin.register(Local)
 class LocalAdmin(admin.ModelAdmin):
