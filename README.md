@@ -30,7 +30,7 @@ Correr migración inicial
 python manage.py migrate
 ```
 
-## Probar la API
+## Probar la API local
 Activar el entorno
 ```
 source activate geriatrico35
@@ -46,10 +46,36 @@ python manage.py runserver
 ```
 Ir al navegador a esta pagina http://127.0.0.1:8000/users/ y con el super user
 
-## Activar el entorno
+## Desplagar la aplicacion a Heroku
+### Requisitos
+Cuenta en heroku.com
+Heroku-Cli instalado local https://devcenter.heroku.com/articles/heroku-cli
+
+## Pasos
+Configurar el git remoto para poder desplegar el codigo
+```
+heroku git:remote -a hackatong2017-geriatricos
+```
+
+Desplegar una nueva version
 ```
 source activate geriatrico35
+pip freeze > requirements.txt
+# commit del nuevo requirements.txt
+git push heroku master
 ```
+
+Correr la migración de la base de datos
+```
+heroku run python manage.py migrate
+```
+
+Crear un superuser
+```
+heroku run python manage.py createsuperuser
+```
+
+Ir a https://hackatong2017-geriatricos.herokuapp.com/users/
 
 ## Desactivate el entorno
 ```
