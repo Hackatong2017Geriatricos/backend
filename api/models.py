@@ -3,7 +3,7 @@ import django
 # Create your models here.
 
 class OrigenDatos(models.Model):
-    id_referencia = models.IntegerField()
+    id_referencia = models.BigIntegerField()
     nombre = models.CharField(max_length=150)
     url = models.URLField()
 
