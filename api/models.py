@@ -3,15 +3,12 @@ import django
 # Create your models here.
 
 class OrigenDatos(models.Model):
+    id_referencia = models.IntegerField()
     nombre = models.CharField(max_length=150)
     url = models.URLField()
 
-class LocalOrigenDatos(models.Model):
-    id_referencia = models.IntegerField()
-    origen = models.ForeignKey(OrigenDatos)
-
 class Local(models.Model):
-    origen_referencia = models.ForeignKey(LocalOrigenDatos)
+    origen_referencia = models.ForeignKey(OrigenDatos)
     nombre = models.CharField(max_length=150)
     descripcion = models.TextField(blank=True)
     url = models.URLField(blank=True)

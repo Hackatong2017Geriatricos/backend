@@ -1,5 +1,5 @@
 from django.contrib import admin
-from api.models import Local, LocalOrigenDatos, OrigenDatos, Imagen
+from api.models import Local, OrigenDatos, Imagen
 
 # Register your models here.
 
@@ -10,12 +10,6 @@ class ImagenAdmin(admin.ModelAdmin):
 @admin.register(Local)
 class LocalAdmin(admin.ModelAdmin):
     field = ('origen_referencia', 'nombre', 'descripcion')
-
-
-@admin.register(LocalOrigenDatos)
-class LocalOrigenDatosAdmin(admin.ModelAdmin):
-    fields = ('id_referencia', 'origen')
-
 
 @admin.register(OrigenDatos)
 class OrigenDatosAdmin(admin.ModelAdmin):
