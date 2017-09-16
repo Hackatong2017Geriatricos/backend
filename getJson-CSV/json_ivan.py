@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import csv
 from getJson import traer_datos_formateados as traer_datos
 

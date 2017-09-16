@@ -10,29 +10,24 @@ def traer_json_de_url(url):
 
 def traer_json_junto():
 
-	x = 2
+	proxima_pagina = traer_json_de_url("https://gobiernoabierto.cordoba.gob.ar/api/v2/entes-privados/geriatricos/?format=json&tipo_id=1&page=1")
+	print(proxima_pagina["next"])
+	json_junto = []
 
-	json_junto = traer_json_de_url("https://gobiernoabierto.cordoba.gob.ar/api/v2/entes-privados/geriatricos/?format=json&tipo_id=1")
+	while (proxima_pagina["next"] != None):
 
-	while (True):
+		json_junto += proxima_pagina["results"]
 
-		try:
-
-			json_junto["results"] += (traer_json_de_url("https://gobiernoabierto.cordoba.gob.ar/api/v2/entes-privados/geriatricos/?format=json&page={}&tipo_id=1").format(x)["results"])
-
-		except Exception as e:
-
-			return json_junto
-
-		x += 1
+		proxima_pagina = traer_json_de_url(proxima_pagina["next"])
 
 	return json_junto
+
 
 def traer_datos_formateados():
 
 	lista_geriatricos = []
 
 	lista_geriatricos.append(["nombre", "id", "titular", "cuit", "direccion", "fecha_inscripcion", "estado", "plazas_habilitadas"])
-	for geriatrico in traer_json_junto()["results"]:
+	for geriatrico in traer_json_junto():
 		lista_geriatricos.append([str(geriatrico["nombre"].replace(",", " ")), str(geriatrico["id"]), str(geriatrico["titular"].replace(",", " ")), (geriatrico["CUIT"].replace(",", " ")), str(geriatrico["direccion"].replace(",", " ")), str(geriatrico["fecha_inscripcion"].replace(",", " ")), str(geriatrico["estado"].replace(",", " ")), str(geriatrico["plazas_habilitadas"]).replace(",", " ")])
 	return lista_geriatricos
