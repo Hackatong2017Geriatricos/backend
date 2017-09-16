@@ -58,6 +58,9 @@ heroku git:remote -a hackatong2017-geriatricos
 
 Desplegar una nueva version
 ```
+source activate geriatrico35
+pip freeze > requirements.txt
+# commit del nuevo requirements.txt
 git push heroku master
 ```
 

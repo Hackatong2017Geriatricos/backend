@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from os import getenv
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -82,17 +83,25 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+environment = getenv('ENVIRONMENT', 'DEVELOPMENT')
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hackatong2017',
-        'USER': 'hackatong2017',
-        'PASSWORD': getenv('DB_PASSWORD', 'geriatrico'),
-        'HOST': getenv('DB_HOST', '127.0.0.1'),
-        'PORT': getenv('DB_PORT', '5432'),
-    }
+    'default': {}
 }
 
+if environment == 'LIVE':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'hackatong2017',
+            'USER': 'hackatong2017',
+            'PASSWORD': getenv('DB_PASSWORD', 'geriatrico'),
+            'HOST': getenv('DB_HOST', '127.0.0.1'),
+            'PORT': getenv('DB_PORT', '5432'),
+        }
+    }
+else:
+    db_from_env = dj_database_url.config()
+    DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

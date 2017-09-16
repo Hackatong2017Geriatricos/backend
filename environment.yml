@@ -14,3 +14,4 @@ dependencies:
   - django==1.11.5
   - djangorestframework==3.6.4
   - gunicorn==19.7.1
+  - dj-database-url==0.4.2
