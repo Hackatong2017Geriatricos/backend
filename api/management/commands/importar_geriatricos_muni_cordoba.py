@@ -1,6 +1,7 @@
 #!/usr/bin/python
 """
-Importar nacimientos del web service del registro civil
+Importar geriatricos desde el API de la Municipalidad de Córdoba
+ejecutar como python manage.py importar_geriatricos_muni_cordoba
 """
 from django.core.management.base import BaseCommand
 from django.db import transaction
