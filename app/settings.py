@@ -89,6 +89,9 @@ DATABASES = {
 }
 
 if environment == 'LIVE':
+    db_from_env = dj_database_url.config()
+    DATABASES['default'].update(db_from_env)
+else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -99,9 +102,6 @@ if environment == 'LIVE':
             'PORT': getenv('DB_PORT', '5432'),
         }
     }
-else:
-    db_from_env = dj_database_url.config()
-    DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
