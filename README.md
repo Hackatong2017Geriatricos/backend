@@ -12,3 +12,15 @@ Conda https://conda.io/docs/installation.html
 ```
 source activate geriatrico35
 ```
+
+## Desactivate el entorno
+```
+source deactivate
+```
+
+## Code Styling (Linter)
+```
+source activate geriatrico35
+flake8 .
+```
+
