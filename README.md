@@ -46,10 +46,21 @@ python manage.py runserver
 ```
 Ir al navegador a esta pagina http://127.0.0.1:8000/users/ y con el super user
 
-## Activar el entorno
+## Desplagar la aplicacion a Heroku
+### Requisitos
+Cuenta en heroku.com
+Heroku-Cli instalado local https://devcenter.heroku.com/articles/heroku-cli
+
+Configurar el git remoto para poder desplegar el codigo
 ```
-source activate geriatrico35
+heroku git:remote -a hackatong2017-geriatricos
 ```
+
+Desplegar una nueva version
+```
+git push heroku master
+```
+
 
 ## Desactivate el entorno
 ```
