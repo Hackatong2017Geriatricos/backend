@@ -5,7 +5,7 @@ Python 3.5
 Conda https://conda.io/docs/installation.html
 PostgreSQL https://www.postgresql.org/download/
 
-## Instalación 
+## Instalación
 Asegurarse de tener el entorno desactivado
 ```
 ./tools/build.sh
@@ -95,8 +95,8 @@ Django Rest Framework - http://www.django-rest-framework.org/tutorial/quickstart
 
 ## Datos de Geríatricos
 
-Los datos de la Ciudad de Córdoba están en el portal de Gobierno Abierto de la Ciudad: [IR](https://gobiernoabierto.cordoba.gob.ar/data/datos-abiertos/categoria/sociedad/geriatricos-habilitados/217).  
-Incluyen un API: [IR](https://gobiernoabierto.cordoba.gob.ar/api/v2/entes-privados/geriatricos/?tipo_id=1).  
+Los datos de la Ciudad de Córdoba están en el portal de Gobierno Abierto de la Ciudad: [IR](https://gobiernoabierto.cordoba.gob.ar/data/datos-abiertos/categoria/sociedad/geriatricos-habilitados/217).
+Incluyen un API: [IR](https://gobiernoabierto.cordoba.gob.ar/api/v2/entes-privados/geriatricos/?tipo_id=1).
 
 
 ## Datos de Geriatricos de Córdoba de Otras Fuentes
