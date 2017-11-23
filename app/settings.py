@@ -170,5 +170,5 @@ CORS_ORIGIN_WHITELIST = (
     '127.0.0.1:8080',
     'file://',
     'https://vejezactiva-101010.firebaseapp.com',
-    'https://',
+    'vejezactiva-101010.firebaseapp.com',
 )
