@@ -30,6 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'hackatong2017-geriatricos.herokuapp.com',
+    'vejezactiva-101010.firebaseapp.com',
 ]
 
 
